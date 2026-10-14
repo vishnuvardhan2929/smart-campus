@@ -1889,3 +1889,103 @@ a {
     padding: 20px 16px;
   }
 }
+
+/* ============================================================
+   LIVE API CONNECTION MODAL & PILL STATES
+   ============================================================ */
+.connection-pill {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.connection-pill.connected {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #065f46;
+}
+
+.connection-pill.disconnected {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #b45309;
+}
+
+.live-pulse.connected {
+  background: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+.live-pulse.disconnected {
+  background: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25);
+}
+
+.connection-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.config-modal {
+  max-width: 520px;
+}
+
+.config-current-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: grid;
+  gap: 6px;
+}
+
+.config-current-box small {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.8px;
+}
+
+.config-current-box code {
+  font-family: monospace;
+  font-size: 13px;
+  color: #1e293b;
+  word-break: break-all;
+  background: #ffffff;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.status-badge-text {
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.status-badge-text.connected {
+  color: #059669;
+}
+
+.status-badge-text.disconnected {
+  color: #d97706;
+}
+
+.field-hint {
+  font-size: 12px;
+  color: #64748b;
+  margin: 3px 0 8px;
+}
+
+.field-hint code {
+  background: #f1f5f9;
+  padding: 2px 5px;
+  border-radius: 4px;
+}

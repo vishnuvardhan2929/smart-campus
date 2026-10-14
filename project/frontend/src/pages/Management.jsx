@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { API_BASE } from "../api/client";
+import { getApiBase } from "../api/client";
 import Navbar from "../components/Navbar";
 import { 
   Bus, 
@@ -108,15 +108,16 @@ export default function Management() {
 
   async function loadRecords() {
     setLoading(true);
+    const api = getApiBase();
     try {
-      const response = await fetch(`${API_BASE}/${current.endpoint}`);
+      const response = await fetch(`${api}/${current.endpoint}`);
       if (!response.ok) throw new Error("Could not load records from server.");
       const data = await response.json();
       setRecords(Array.isArray(data) ? data : []);
       setMessage("");
     } catch (err) {
       setRecords([]);
-      setMessage("Unable to connect to the backend server. Verify your Spring Boot service is running.");
+      setMessage(`Unable to connect to backend at [${api}]. Click "Backend Disconnected" in the top bar to set your Railway URL.`);
       setMessageType("warning");
     } finally {
       setLoading(false);
@@ -152,8 +153,9 @@ export default function Management() {
     });
 
     try {
+      const api = getApiBase();
       const response = await fetch(
-        `${API_BASE}/${current.endpoint}${editingId !== null ? `/${editingId}` : ""}`,
+        `${api}/${current.endpoint}${editingId !== null ? `/${editingId}` : ""}`,
         {
           method: editingId !== null ? "PUT" : "POST",
           headers: { "Content-Type": "application/json" },
@@ -180,7 +182,8 @@ export default function Management() {
     if (!window.confirm("Are you sure you want to delete this record?")) return;
 
     try {
-      const response = await fetch(`${API_BASE}/${current.endpoint}/${id}`, {
+      const api = getApiBase();
+      const response = await fetch(`${api}/${current.endpoint}/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) throw new Error("Unable to delete record.");
