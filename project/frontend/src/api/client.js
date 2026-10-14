@@ -9,7 +9,7 @@ export function getApiBase() {
     }
   } catch (e) {}
 
-  const rawApi = (import.meta.env.VITE_API_URL || "http://localhost:8080/api").trim().replace(/\/+$/, "");
+  const rawApi = (import.meta.env.VITE_API_URL || "https://smart-campus-production-10bf.up.railway.app/api").trim().replace(/\/+$/, "");
   return rawApi.endsWith("/api") ? rawApi : `${rawApi}/api`;
 }
 
