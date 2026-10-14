@@ -52,7 +52,8 @@ const modules = {
   },
 };
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:8080/api";
+const rawApi = (import.meta.env.VITE_API_URL || "http://localhost:8080/api").trim().replace(/\/+$/, "");
+const API = rawApi.endsWith("/api") ? rawApi : `${rawApi}/api`;
 
 function App() {
   const [active, setActive] = useState("Buses");

@@ -1,0 +1,26 @@
+# Dependency & build directories
+node_modules/
+dist/
+target/
+*.jar
+*.war
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Vercel and Railway
+.vercel/
+.railway/
+
+# Logs
+logs/
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.iml
