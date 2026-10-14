@@ -21,3 +21,4 @@ export async function fetchFromApi(endpoint, options = {}) {
     throw err;
   }
 }
+

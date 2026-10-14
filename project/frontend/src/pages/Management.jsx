@@ -370,3 +370,4 @@ export default function Management() {
     </div>
   );
 }
+

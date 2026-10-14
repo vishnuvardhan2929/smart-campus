@@ -53,3 +53,4 @@ export default function Navbar({ title, breadcrumb }) {
     </header>
   );
 }
+
