@@ -18,7 +18,7 @@ import com.campus.bus.service.DriverService;
 
 @RestController
 @RequestMapping("/api/drivers")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://smart-campus-git-main-vishnuvardhan2929.vercel.app", "https://smart-campus-seven-sage.vercel.app", "http://localhost:5173", "http://localhost:3000"}, allowedHeaders = "*")
 public class DriverController {
 
     @Autowired

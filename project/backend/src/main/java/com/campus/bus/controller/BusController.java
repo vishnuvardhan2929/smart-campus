@@ -10,7 +10,7 @@ import com.campus.bus.service.BusService;
 
 @RestController
 @RequestMapping("/api/buses")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"https://smart-campus-git-main-vishnuvardhan2929.vercel.app", "https://smart-campus-seven-sage.vercel.app", "http://localhost:5173", "http://localhost:3000"}, allowedHeaders = "*")
 public class BusController {
 
     @Autowired
